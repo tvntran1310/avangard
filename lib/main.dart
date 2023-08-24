@@ -2,8 +2,10 @@
 
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
+// import 'package:namer_app/ui-app/22-08-23/pages/menu_page.dart';
 import 'package:provider/provider.dart';
-import 'ui-app/21-08-23/login_page.dart';
+// import 'ui-app/21-08-23/login_page.dart';
+import 'ui-app/22-08-23/pages/intro_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,13 +20,12 @@ class MyApp extends StatelessWidget {
       create: (context) => MyAppState(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Namer App',
-        theme: ThemeData(
-          useMaterial3: true,
-          colorScheme:
-              ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 233, 98, 56)),
-        ),
+        title: 'App',
         home: MyHomePage(),
+        routes: {
+          '/intropage': (context) => const IntroPage(),
+          // '/menupage': (context) => const MenuPage(),
+        },
       ),
     );
   }
@@ -50,7 +51,8 @@ class MyHomePage extends StatelessWidget {
                 // Navigate to the DetailsPage
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginPage()),
+                  // MaterialPageRoute(builder: (context) => LoginPage()),
+                  MaterialPageRoute(builder: (context) => IntroPage()),
                 );
               },
               child: Text('Go to Details'),
