@@ -58,7 +58,8 @@ class NavigationDrawerWidget extends StatelessWidget {
   }
 }
 
-Widget menuItem({
+// ignore: non_constant_identifier_names
+Widget MenuItem({
   required String text,
   required IconData icon,
   VoidCallback? onClicked,
