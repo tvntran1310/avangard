@@ -181,3 +181,19 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
+
+
+/* issue
+1. Vấn padding của tk textfield có rồi nhưng nó ko thay đổi là do padding sai hướng -> left, right chứ kp là top, bottom
+2. Row đang sử dụng sai mục đích -> Nó thường thường sẽ có thuộc tính là children nên là phải khi nào chứa 2 tk trở lên mới bọc nó lại
+  -> Hiện tại t chỉ có cái Text thôi mà m bọc ngoài nó cái Row thì hơi ko cần thiết
+  -> Thường là t sẽ coi cái title đó là 1 component nên cấu trúc t sẽ làm là:
+    |_ Padding (mục đích bọc tk nào ngoài cùng là để align title vs input cho đồng bộ chứ ko cần phải padding lắc nhắc)
+      |_Row
+        |_ Text(title: MNV/Email)
+        |_ TextInput
+  -> Theo cấu trúc này thì m cx sẽ thấy có những thứ lặp lại như này sẽ dễ cho việc tách components hơn
+3. Tuỳ vào UI họ cung cấp nhưng mà t thấy khoảng cách trái phải của cái nút nên bằng với TextInput luôn
+4. Màu placeholder nên nhạc lại 
+5. Khoảng cách top/bottom giữa các component tổng thể toàn màn hình chưa ổn (Cái này chắc là do chưa làm xong nên mới vậy, nào xong hết thì nhớ handle case này nha)
+*/
