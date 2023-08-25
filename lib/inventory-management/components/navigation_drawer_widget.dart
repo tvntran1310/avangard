@@ -23,31 +23,31 @@ class NavigationDrawerWidget extends StatelessWidget {
                 fit: BoxFit.contain,
               ),
             ),
-            MenuItem(
+            menuItem(
               text: 'Trang chủ',
               icon: Icons.house,
             ),
-            MenuItem(
+            menuItem(
               text: 'Danh mục',
               icon: Icons.list,
             ),
-            MenuItem(
+            menuItem(
               text: 'Mua hàng',
               icon: Icons.shopping_cart,
             ),
-            MenuItem(
+            menuItem(
               text: 'Sản xuất',
               icon: Icons.gps_fixed,
             ),
-            MenuItem(
+            menuItem(
               text: 'Quản lý kho',
               icon: Icons.inventory,
             ),
-            MenuItem(
+            menuItem(
               text: 'Báo cáo',
               icon: Icons.report,
             ),
-            MenuItem(
+            menuItem(
               text: 'Hệ thống',
               icon: Icons.settings,
             )
@@ -58,9 +58,10 @@ class NavigationDrawerWidget extends StatelessWidget {
   }
 }
 
-Widget MenuItem({
+Widget menuItem({
   required String text,
   required IconData icon,
+  VoidCallback? onClicked,
 }) {
   final color = Color.fromARGB(255, 0, 0, 0);
   const hoverColor = Colors.black87;
@@ -74,6 +75,6 @@ Widget MenuItem({
       ),
     ),
     hoverColor: hoverColor,
-    onTap: () {},
+    onTap: onClicked,
   );
 }

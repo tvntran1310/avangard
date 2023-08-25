@@ -41,6 +41,19 @@ class MyHomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              /* align center - column */
+              // logo Thaco / image
+              Center(
+                child: Image(
+                  image: AssetImage(
+                    'lib/images/thaco/LOGO_INDUSTRIES.png',
+                  ),
+                  height: MediaQuery.of(context).size.width - 150,
+                  width: MediaQuery.of(context).size.width - 150,
+                  fit: BoxFit.contain,
+                ),
+              ),
+
               // title
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,

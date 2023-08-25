@@ -1,21 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/navigation_drawer_widget.dart';
 
-// class HomePage extends StatelessWidget {
-//   const HomePage({super.key});
-//   static const appTitle = 'QUẢN LÝ KHO LKN';
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Color.fromARGB(255, 255, 255, 255),
-//       appBar: AppBar(
-//         title: Text(appTitle),
-//       ),
-//     );
-//   }
-// }
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -31,7 +16,16 @@ class _HomePageState extends State<HomePage> {
       drawer: NavigationDrawerWidget(),
       // appbar
       appBar: AppBar(
-        title: Text('QUẢN LÝ KHO LKN'),
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        ),
+        title: Text(
+          'QUẢN LÝ KHO LKN',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
       ),
       // body
       body: Center(
