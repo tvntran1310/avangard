@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'components/Color_rectangle.dart';
 
 class DemoColor extends StatelessWidget {
   const DemoColor({super.key});
@@ -13,42 +14,24 @@ class DemoColor extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Column(children: [
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  color: Color.fromARGB(212, 239, 46, 32),
-                  width: containerWidth,
-                  height: containerHeight,
-                ),
-              ],
-            ),
+          ColorRectangle(
+            color: Color.fromARGB(212, 239, 46, 32),
+            width: containerWidth,
+            height: containerHeight,
+            alignItem: MainAxisAlignment.start,
           ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  color: Color.fromARGB(213, 228, 228, 49),
-                  width: containerWidth,
-                  height: containerHeight,
-                )
-              ],
-            ),
+          ColorRectangle(
+            color: Color.fromARGB(213, 228, 228, 49),
+            width: containerWidth,
+            height: containerHeight,
+            alignItem: MainAxisAlignment.center,
           ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Container(
-                  color: Color.fromARGB(202, 81, 235, 38),
-                  width: containerWidth,
-                  height: containerHeight,
-                )
-              ],
-            ),
-          ),
+          ColorRectangle(
+            color: Color.fromARGB(202, 81, 235, 38),
+            width: containerWidth,
+            height: containerHeight,
+            alignItem: MainAxisAlignment.end,
+          )
         ]),
       ),
     );
