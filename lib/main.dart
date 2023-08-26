@@ -3,7 +3,7 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'inventory-management/pages/homepage.dart';
+import 'inventory-management/pages/general.dart';
 
 void main() {
   runApp(MyApp());
@@ -157,7 +157,7 @@ class MyHomePage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomePage(),
+                        builder: (context) => General(),
                       ),
                     );
                   },

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/navigation_drawer_widget.dart';
+import '../utils/widget-utils.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -39,36 +40,25 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
+
         // body
         body: TabBarView(
           children: [
             Center(
-              child: Text('Biểu đồ'),
+              child: TextWidget(text: 'Biểu đồ', fontSize: 35),
             ),
             Center(
-              child: Text('Tiến độ sx'),
+              child: TextWidget(text: 'Tiến độ sx', fontSize: 35),
             ),
             Center(
-              child: Text('Tiến độ nhập kho'),
+              child: TextWidget(text: 'Tiến độ nhập kho', fontSize: 35),
             ),
             Center(
-              child: Text('Tiến độ giao hàng'),
+              child: TextWidget(text: 'Tiến độ giao hàng', fontSize: 35),
             ),
           ],
         ),
       ),
     );
   }
-}
-
-// ignore: non_constant_identifier_names
-Widget TextWidget({
-  required String text,
-  Color? color,
-  double? fontSize,
-}) {
-  return Text(
-    text,
-    style: TextStyle(color: color, fontSize: fontSize),
-  );
 }
