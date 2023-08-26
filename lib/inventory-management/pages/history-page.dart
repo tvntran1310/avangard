@@ -9,15 +9,15 @@ class HistoryPage extends StatelessWidget {
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
         title: TextWidget(
-          text: 'Lịch sử',
-          color: Colors.black,
-        ),
+            text: 'Lịch sử',
+            color: Colors.black,
+            alignment: Alignment.centerLeft),
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(
           color: Colors.black,
         ),
       ),
-      body: Center(child: Text('Lịch sử')),
+      body: TextWidget(text: 'Lịch sử', alignment: Alignment.center),
     );
   }
 }

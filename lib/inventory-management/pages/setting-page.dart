@@ -9,15 +9,15 @@ class SettingPage extends StatelessWidget {
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
         title: TextWidget(
-          text: 'Cấu hình',
-          color: Colors.black,
-        ),
+            text: 'Cấu hình',
+            color: Colors.black,
+            alignment: Alignment.centerLeft),
         iconTheme: IconThemeData(
           color: Colors.black,
         ),
         backgroundColor: Colors.white,
       ),
-      body: Center(child: Text('Cấu hình')),
+      body: TextWidget(text: 'Cấu hình', alignment: Alignment.center),
     );
   }
 }

@@ -13,6 +13,20 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     const blackColor = Colors.black;
+    List<String> list = [
+      'Biểu đồ',
+      'Tiến độ sx',
+      'Tiến độ nhập kho',
+      'Tiến độ giao hàng'
+    ];
+    // List<Widget> tabs =
+    //     list.map((name) => TextWidget(text: name, color: blackColor)).toList();
+
+    List<Widget> renderTabItems() {
+      return list
+          .map((name) => TextWidget(text: name, color: blackColor))
+          .toList();
+    }
 
     return DefaultTabController(
       length: 4,
@@ -21,14 +35,7 @@ class _HomePageState extends State<HomePage> {
         drawer: NavigationDrawerWidget(),
         // appbar
         appBar: AppBar(
-          bottom: TabBar(
-            tabs: [
-              TextWidget(text: 'Biểu đồ', color: blackColor),
-              TextWidget(text: 'Tiến độ sx', color: blackColor),
-              TextWidget(text: 'Tiến độ nhập kho', color: blackColor),
-              TextWidget(text: 'Tiến độ giao hàng', color: blackColor),
-            ],
-          ),
+          bottom: TabBar(tabs: renderTabItems()),
           backgroundColor: Colors.white,
           iconTheme: IconThemeData(
             color: blackColor,
@@ -43,20 +50,7 @@ class _HomePageState extends State<HomePage> {
 
         // body
         body: TabBarView(
-          children: [
-            Center(
-              child: TextWidget(text: 'Biểu đồ', fontSize: 35),
-            ),
-            Center(
-              child: TextWidget(text: 'Tiến độ sx', fontSize: 35),
-            ),
-            Center(
-              child: TextWidget(text: 'Tiến độ nhập kho', fontSize: 35),
-            ),
-            Center(
-              child: TextWidget(text: 'Tiến độ giao hàng', fontSize: 35),
-            ),
-          ],
+          children: renderTabItems(),
         ),
       ),
     );
