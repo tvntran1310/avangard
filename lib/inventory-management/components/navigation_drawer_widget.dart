@@ -28,10 +28,6 @@ class NavigationDrawerWidget extends StatelessWidget {
               icon: Icons.house,
             ),
             MenuItem(
-              text: 'Danh mục',
-              icon: Icons.list,
-            ),
-            MenuItem(
               text: 'Mua hàng',
               icon: Icons.shopping_cart,
             ),
