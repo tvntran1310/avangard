@@ -30,7 +30,7 @@ class LoginPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 15),
+                    padding: EdgeInsets.only(left: 20),
                     child: Text(
                       'MNV/Email:',
                       style: TextStyle(
@@ -49,7 +49,9 @@ class LoginPage extends StatelessWidget {
                 height: 50,
                 margin: EdgeInsets.only(
                   top: 10,
-                  bottom: 10,
+                  bottom: 20,
+                  left: 20,
+                  right: 20,
                 ),
                 // color: Colors.white,
                 decoration: BoxDecoration(
@@ -78,7 +80,7 @@ class LoginPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 15),
+                    padding: EdgeInsets.only(left: 20),
                     child: Text(
                       'Password:',
                       style: TextStyle(
@@ -97,7 +99,9 @@ class LoginPage extends StatelessWidget {
                 height: 50,
                 margin: EdgeInsets.only(
                   top: 10,
-                  bottom: 30,
+                  bottom: 20,
+                  left: 20,
+                  right: 20,
                 ),
                 // color: Colors.white,
                 decoration: BoxDecoration(
@@ -122,7 +126,11 @@ class LoginPage extends StatelessWidget {
 
               // button login
               Container(
-                margin: EdgeInsets.only(left: 20, right: 20),
+                margin: EdgeInsets.only(
+                  left: 30,
+                  right: 30,
+                  top: 30,
+                ),
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
