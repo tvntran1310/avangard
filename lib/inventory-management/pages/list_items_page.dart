@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 
 import 'package:namer_app/inventory-management/components/navigation_drawer_widget.dart';
 import 'package:namer_app/inventory-management/models/item_model.dart';
+import 'package:namer_app/inventory-management/pages/item_detail_page.dart';
 import 'package:namer_app/inventory-management/utils/widget-utils.dart';
 
 class ListItemsPage extends StatefulWidget {
@@ -13,16 +14,6 @@ class ListItemsPage extends StatefulWidget {
 }
 
 class _ListItemsPageState extends State<ListItemsPage> {
-  List<ItemModel> listItems = List.generate(
-    10,
-    (index) => ItemModel(
-      name: 'Item ${index + 1}',
-      description: 'description ${index + 1}',
-      imagePath: 'lib/images/thaco/shopping-cart-with-items.png',
-      quantity: 2,
-      date: DateTime.now(),
-    ),
-  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,61 +39,71 @@ class _ListItemsPageState extends State<ListItemsPage> {
             horizontal: 10.0,
             vertical: 5.0,
           ),
-          child: Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
+          child: GestureDetector(
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ItemDetailPage(
+                  listItems[index],
+                ),
+              ),
             ),
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.all(15),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // image
-                  Image.asset(
-                    listItems[index].imagePath,
-                    height: 40,
-                    width: 40,
-                    fit: BoxFit.contain,
-                  ),
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                padding: EdgeInsets.all(15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // image
+                    Image.asset(
+                      listItems[index].imagePath,
+                      height: 40,
+                      width: 40,
+                      fit: BoxFit.contain,
+                    ),
 
-                  // name + decription
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        listItems[index].name,
-                        style: TextStyle(
+                    // name + decription
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          listItems[index].name,
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.black,
+                          ),
+                        ),
+                        Text(
+                          listItems[index].description,
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Colors.grey,
+                          ),
+                        )
+                      ],
+                    ),
+                    // date + quantity
+                    Column(
+                      children: [
+                        TextWidget(
+                          text: (convertDate(listItems[index].date)).toString(),
                           fontSize: 15,
                           color: Colors.black,
                         ),
-                      ),
-                      Text(
-                        listItems[index].description,
-                        style: TextStyle(
-                          fontSize: 13,
+                        TextWidget(
+                          text: (listItems[index].quantity).toString(),
+                          fontSize: 15,
                           color: Colors.grey,
-                        ),
-                      )
-                    ],
-                  ),
-                  // date + quantity
-                  Column(
-                    children: [
-                      TextWidget(
-                        text: (convertDate(listItems[index].date)).toString(),
-                        fontSize: 15,
-                        color: Colors.black,
-                      ),
-                      TextWidget(
-                        text: (listItems[index].quantity).toString(),
-                        fontSize: 15,
-                        color: Colors.grey,
-                      )
-                    ],
-                  ),
-                ],
+                        )
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
