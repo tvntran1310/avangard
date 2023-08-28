@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:namer_app/inventory-management/pages/history-page.dart';
+import 'package:namer_app/inventory-management/pages/item-page.dart';
 import 'package:namer_app/inventory-management/pages/home-page.dart';
 import 'package:namer_app/inventory-management/pages/setting-page.dart';
 
@@ -14,7 +14,7 @@ class _GeneralState extends State<General> {
   int _currentIndex = 0;
   final tabs = [
     HomePage(),
-    HistoryPage(),
+    ItemPage(),
     SettingPage(),
   ];
   @override
@@ -29,12 +29,12 @@ class _GeneralState extends State<General> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.timelapse),
-            label: 'Lịch sử',
+            icon: Icon(Icons.shopping_bag),
+            label: 'Item',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: 'Cấu hình',
+            label: 'Setting',
           )
         ],
         currentIndex: _currentIndex,
