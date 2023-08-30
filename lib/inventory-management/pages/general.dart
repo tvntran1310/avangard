@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:namer_app/inventory-management/pages/list_items_page.dart';
+import 'package:namer_app/inventory-management/pages/item/list_items_page.dart';
 import 'package:namer_app/inventory-management/pages/home-page.dart';
 import 'package:namer_app/inventory-management/pages/setting-page.dart';
 

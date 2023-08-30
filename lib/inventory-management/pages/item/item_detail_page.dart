@@ -15,9 +15,11 @@ class ItemDetailPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          TextWidget(
-            text: 'text',
-          ),
+          // image
+          Image.asset(item.imagePath),
+          // title
+          TextWidget(text: item.name),
+          //description
         ],
       ),
     );

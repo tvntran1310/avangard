@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 
 import 'package:namer_app/inventory-management/components/navigation_drawer_widget.dart';
 import 'package:namer_app/inventory-management/models/item_model.dart';
-import 'package:namer_app/inventory-management/pages/item_detail_page.dart';
+import 'package:namer_app/inventory-management/pages/item/item_detail_page.dart';
 import 'package:namer_app/inventory-management/utils/widget-utils.dart';
 
 class ListItemsPage extends StatefulWidget {
@@ -96,7 +96,7 @@ class _ListItemsPageState extends State<ListItemsPage> {
                           color: Colors.black,
                         ),
                         TextWidget(
-                          text: (listItems[index].quantity).toString(),
+                          text: 'SL: ${(listItems[index].quantity).toString()}',
                           fontSize: 15,
                           color: Colors.grey,
                         )
