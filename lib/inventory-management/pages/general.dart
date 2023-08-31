@@ -15,7 +15,7 @@ class _GeneralState extends State<General> {
   final tabs = [
     HomePage(),
     ListItemsPage(),
-    SettingPage(),
+    SettingPage(title: 'Barcode Scan'),
   ];
   @override
   Widget build(BuildContext context) {
